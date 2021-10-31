@@ -10,6 +10,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: const [Search(), CardsList()],
+      crossAxisAlignment: CrossAxisAlignment.stretch,
     );
   }
 }

@@ -6,8 +6,9 @@ class CardsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Expanded(
+        child: Column(
       children: const [MovieCard(), MovieCard(), MovieCard(), MovieCard()],
-    );
+    ));
   }
 }

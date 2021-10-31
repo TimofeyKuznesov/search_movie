@@ -1,1 +1,2 @@
-export 'main/index.dart' show MainPage;
+export 'main/index.dart';
+export 'application.dart';
