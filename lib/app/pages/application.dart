@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:search_movie/app/pages/index.dart';
+import 'package:search_movie/app/theme/branding_colors.dart';
 
 class Application extends StatelessWidget {
   @override
@@ -29,6 +30,8 @@ class Application extends StatelessWidget {
         ),
       ),
       body: const MainPage(),
+      //style
+      backgroundColor: BrandingColors.gray,
     );
   }
 }
