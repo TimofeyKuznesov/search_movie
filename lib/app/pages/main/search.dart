@@ -8,33 +8,66 @@ class Search extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const Text(
-              'FIND MORE MOVIE',
-              style: TextStyle(
-                color: BrandingColors.white,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 40),
+          child: Column(
+            // crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
+                children: [
+                  const Text(
+                    'netflixroulette',
+                    style: TextStyle(
+                      color: BrandingColors.red,
+                    ),
+                  ),
+                  MaterialButton(
+                    onPressed: () {},
+                    child: const Text('Search'),
+                    color: BrandingColors.red,
+                    textColor: BrandingColors.white,
+                  ),
+                ],
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'Search movies',
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40),
+                child: Text(
+                  'FIND MORE MOVIE',
                   style: TextStyle(
                     color: BrandingColors.white,
                   ),
                 ),
-                MaterialButton(
-                  onPressed: () {},
-                  child: const Text('Search'),
-                  color: BrandingColors.red,
-                  textColor: BrandingColors.white,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 40),
+                child: Row(
+                  children: [
+                    const Expanded(
+                      child: Text(
+                        'Search movies',
+                        style: TextStyle(
+                          color: BrandingColors.white,
+                        ),
+                      ),
+                      flex: 1,
+                    ),
+                    Expanded(
+                      child: MaterialButton(
+                        onPressed: () {},
+                        child: const Text('Search'),
+                        color: BrandingColors.red,
+                        textColor: BrandingColors.white,
+                      ),
+                      flex: 0,
+                    ),
+                  ],
                 ),
-              ],
-            )
-          ],
+              )
+            ],
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
         ),
         color: BrandingColors.black,
         margin: const EdgeInsets.only(bottom: 20),

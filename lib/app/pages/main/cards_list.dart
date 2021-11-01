@@ -21,6 +21,7 @@ class CardsList extends StatelessWidget {
           ],
         ),
         color: BrandingColors.black,
+        padding: EdgeInsets.symmetric(horizontal: 20),
       ),
     );
   }
