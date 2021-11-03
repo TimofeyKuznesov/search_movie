@@ -14,22 +14,19 @@ class MovieCard extends StatelessWidget {
               Column(
                 children: [
                   Expanded(child: Image.asset('graphics/BitmapBohemian.png')),
-                  Expanded(
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            child: const Text(
-                              'Bohemian Rhapsody',
-                              overflow: TextOverflow.ellipsis,
-                            ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          child: const Text(
+                            'Bohemian Rhapsody',
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
-                        const Text('2003'),
-                      ],
-                    ),
-                    flex: 0,
-                  )
+                      ),
+                      const Text('2003'),
+                    ],
+                  ),
                 ],
               ),
               Positioned(
