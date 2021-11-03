@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:search_movie/app/core/widgets/index.dart';
 import 'package:search_movie/app/theme/index.dart';
 
 import './cards_list.dart';
@@ -9,16 +10,19 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: const [
-          Search(),
-          CardsList(),
-        ],
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+    return WillPopScope(
+      onWillPop: () => exitApp(context),
+      child: Container(
+        color: BrandingColors.darkGray,
+        margin: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: const [
+            Search(),
+            CardsList(),
+          ],
+        ),
       ),
-      color: BrandingColors.darkGray,
-      margin: const EdgeInsets.all(20),
     );
   }
 }
