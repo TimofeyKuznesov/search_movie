@@ -25,7 +25,9 @@ class CardsList extends StatelessWidget {
               onTap: () async {
                 final result = await Navigator.of(context)
                     .push(MaterialPageRoute(builder: (ctx) => EditCard()));
-                showInfo(context, result);
+                if (null != result) {
+                  showInfo(context, result);
+                }
               },
             ),
           ),
