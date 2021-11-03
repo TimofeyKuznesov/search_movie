@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:search_movie/app/core/widgets/index.dart';
+import 'package:search_movie/app/pages/index.dart';
 import 'package:search_movie/app/theme/index.dart';
-import 'package:search_movie/app_route.dart';
 
 const moviesList = [{}, {}, {}, {}];
 
@@ -22,7 +22,11 @@ class CardsList extends StatelessWidget {
             6,
             (index) => GestureDetector(
               child: const MovieCard(),
-              onTap: () => Navigator.of(context).pushNamed(AppRoute.card),
+              onTap: () async {
+                final result = await Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (ctx) => EditCard()));
+                showInfo(context, result);
+              },
             ),
           ),
         ),

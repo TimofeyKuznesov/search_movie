@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:search_movie/app/core/widgets/index.dart';
 import 'package:search_movie/app/pages/index.dart';
 import 'package:search_movie/app_route.dart';
 
@@ -29,7 +28,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Application(),
       routes: <String, WidgetBuilder>{
-        AppRoute.card: (BuildContext context) => const MovieCard(),
+        AppRoute.card: (BuildContext context) => EditCard(),
       },
     );
   }

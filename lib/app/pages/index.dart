@@ -1,2 +1,3 @@
-export 'main/index.dart';
-export 'application.dart';
+export './application.dart';
+export './edit-card/index.dart';
+export './main/index.dart';
