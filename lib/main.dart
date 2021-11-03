@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './app/pages/index.dart';
+import 'package:search_movie/app/pages/index.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MainPage(),
+      home: Application(),
     );
   }
 }
