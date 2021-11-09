@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:search_movie/app/services/movies/models/top_250_data_detail.dart';
 import 'package:search_movie/app/theme/index.dart';
 
 class MovieCard extends StatelessWidget {
-  const MovieCard({Key? key}) : super(key: key);
+  final Top250DataDetail card;
+
+  const MovieCard(this.card, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,18 +26,24 @@ class MovieCard extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  Expanded(child: Image.asset('graphics/BitmapBohemian.png')),
+                  Expanded(child: Image.network(card.image ?? '')),
                   Row(
                     children: [
                       Expanded(
                         child: Container(
-                          child: const Text(
-                            'Bohemian Rhapsody',
-                            overflow: TextOverflow.ellipsis,
-                          ),
+                          child: Text(card.title ?? '',
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                color: BrandingColors.white,
+                              )),
                         ),
                       ),
-                      const Text('2003'),
+                      Text(
+                        card.year ?? '',
+                        style: const TextStyle(
+                          color: BrandingColors.white,
+                        ),
+                      ),
                     ],
                   ),
                 ],

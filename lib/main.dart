@@ -27,9 +27,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Application(),
-      routes: <String, WidgetBuilder>{
-        AppRoute.card: (BuildContext context) => EditCard(),
-      },
     );
   }
 }
