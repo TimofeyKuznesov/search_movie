@@ -12,11 +12,11 @@ class EditCard extends StatelessWidget {
         children: [
           const MovieCard(),
           TextButton(
-            onPressed: () => {Navigator.of(context).pop('like')},
+            onPressed: () => Navigator.of(context).pop('like'),
             child: const Text('Send like'),
           ),
           TextButton(
-            onPressed: () => {Navigator.of(context).pop('dislike')},
+            onPressed: () => Navigator.of(context).pop('dislike'),
             child: const Text('Send dislike'),
           )
         ],

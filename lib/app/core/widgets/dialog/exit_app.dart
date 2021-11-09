@@ -7,7 +7,7 @@ Future<bool> exitApp(BuildContext context) {
       return AlertDialog(
         title: const Text('Do you want to exit this application?'),
         content: const Text("Do you really want to close the application?"),
-        actions: <Widget>[
+        actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),
             child: const Text('No'),
