@@ -8,7 +8,17 @@ class MovieCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Card(
+        color: BrandingColors.black,
         child: Container(
+          width: 100,
+          height: 100,
+          decoration: BoxDecoration(
+            border: Border.all(
+              width: 2,
+            ),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          margin: EdgeInsets.all(3),
           child: Stack(
             children: [
               Column(
@@ -37,25 +47,14 @@ class MovieCard extends StatelessWidget {
                   width: 30,
                   child: FloatingActionButton(
                     onPressed: () {},
-                    child: Icon(Icons.more_vert),
                     backgroundColor: BrandingColors.black,
+                    child: Icon(Icons.more_vert),
                   ),
                 ),
               ),
             ],
           ),
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.black,
-              width: 2,
-            ),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          margin: EdgeInsets.all(3),
         ),
-        color: BrandingColors.black,
       ),
     );
   }

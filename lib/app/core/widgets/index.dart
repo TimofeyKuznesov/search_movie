@@ -1,1 +1,2 @@
-export 'movie-card/index.dart' show MovieCard;
+export './dialog/index.dart';
+export './movie-card/index.dart';
