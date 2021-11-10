@@ -19,11 +19,23 @@ class MainPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Search(),
+            const Search(),
             FutureBuilder<List<Top250DataDetail>>(
-                future: MoviesService().getTopMovies(),
-                builder: (context, snapshot) =>
-                    CardsList(cards: snapshot.data ?? [])),
+              future: MoviesService().getTopMovies(),
+              initialData: const [],
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.done) {
+                  return CardsList(
+                    cards: snapshot.data ?? [],
+                  );
+                }
+                return const Center(
+                  child: CircularProgressIndicator(
+                    color: Colors.white,
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
