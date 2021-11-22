@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:search_movie/app/services/localization/app.i18n.dart';
 import 'package:search_movie/app/theme/branding_colors.dart';
 
 class Search extends StatelessWidget {
@@ -7,9 +8,13 @@ class Search extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: BrandingColors.black,
+      margin: const EdgeInsets.only(bottom: 20),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 40),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               children: [
@@ -22,17 +27,17 @@ class Search extends StatelessWidget {
                 const Spacer(),
                 MaterialButton(
                   onPressed: () {},
-                  child: const Text('Search'),
                   color: BrandingColors.red,
                   textColor: BrandingColors.white,
+                  child: Text('Search'.i18n),
                 ),
               ],
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 40),
               child: Text(
-                'FIND MORE MOVIE',
-                style: TextStyle(
+                'FIND MORE MOVIE'.i18n,
+                style: const TextStyle(
                   color: BrandingColors.white,
                 ),
               ),
@@ -41,31 +46,26 @@ class Search extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 40),
               child: Row(
                 children: [
-                  const Expanded(
+                  Expanded(
                     child: Text(
-                      'Search movies',
-                      style: TextStyle(
+                      'Search movies'.i18n,
+                      style: const TextStyle(
                         color: BrandingColors.white,
                       ),
                     ),
-                    flex: 1,
                   ),
                   MaterialButton(
                     onPressed: () {},
-                    child: const Text('Search'),
                     color: BrandingColors.red,
                     textColor: BrandingColors.white,
+                    child: Text('Search'.i18n),
                   ),
                 ],
               ),
             )
           ],
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
         ),
       ),
-      color: BrandingColors.black,
-      margin: const EdgeInsets.only(bottom: 20),
     );
   }
 }
