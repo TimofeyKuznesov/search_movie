@@ -1,8 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:search_movie/app/core/widgets/index.dart';
+import 'package:search_movie/app/services/index.dart';
 
 class EditCard extends StatelessWidget {
+  final Top250DataDetail card;
+
+  const EditCard(this.card, {Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -10,7 +15,7 @@ class EditCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const MovieCard(),
+          MovieCard(card),
           TextButton(
             onPressed: () => Navigator.of(context).pop('like'),
             child: const Text('Send like'),

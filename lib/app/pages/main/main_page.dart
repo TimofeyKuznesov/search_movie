@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:search_movie/app/core/widgets/index.dart';
+import 'package:search_movie/app/services/index.dart';
 import 'package:search_movie/app/theme/index.dart';
 
 import './cards_list.dart';
@@ -17,9 +18,24 @@ class MainPage extends StatelessWidget {
         margin: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: const [
-            Search(),
-            CardsList(),
+          children: [
+            const Search(),
+            FutureBuilder<List<Top250DataDetail>>(
+              future: MoviesService().getTopMovies(),
+              initialData: const [],
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.done) {
+                  return CardsList(
+                    cards: snapshot.data ?? [],
+                  );
+                }
+                return const Center(
+                  child: CircularProgressIndicator(
+                    color: Colors.white,
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
