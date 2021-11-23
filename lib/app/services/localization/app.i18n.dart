@@ -1,4 +1,5 @@
 import 'package:i18n_extension/i18n_extension.dart';
+import 'package:i18n_extension/io/import.dart';
 
 const movieSearch = 'Movie search';
 const header = 'Header';
@@ -11,25 +12,23 @@ extension AppI18n on String {
   /// keys here in the translations file, and then use the [Translations.from]
   /// constructor:
   ///
-  static final _t = Translations.from('en_us', {
-    movieSearch: {
-      'en_us': 'Movie search',
-      'ru_RU': 'Поиск фильмов',
-    },
-    header: {
-      'en_us': 'Header',
-      'ru_RU': 'Заголовок',
-    },
-    findMoreMovie: {
-      'en_us': 'FIND MORE MOVIE',
-      'ru_RU': 'Найти больше фильмов',
-    },
-    search: {'en_us': 'Search', 'ru_RU': 'Поиск'}
-  });
+  static TranslationsByLocale translations = Translations.byLocale("ru");
 
-  String get i18n => localize(this, _t);
+  // static Future<void> loadTranslations() async {
+  //   translations += await JSONImporter().fromAssetDirectory("locales");
+  // }
+  static Future<void> loadTranslations() {
+    return JSONImporter()
+        .fromAssetDirectory("locales")
+        .then((value) => {
+              translations += value,
+            })
+        .catchError((error) => print(error));
+  }
+
+  String get i18n => localize(this, translations);
 
   String fill(List<Object> params) => localizeFill(this, params);
 
-  String plural(int value) => localizePlural(value, this, _t);
+  String plural(int value) => localizePlural(value, this, translations);
 }
