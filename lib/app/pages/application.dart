@@ -42,6 +42,13 @@ class Application extends StatelessWidget {
                   _navigatorKey.currentState?.pushNamed(AppRoute.map);
                 },
               ),
+              ListTile(
+                title: Text('web-view'.i18n),
+                onTap: () {
+                  Navigator.pop(context);
+                  _navigatorKey.currentState?.pushNamed(AppRoute.webView);
+                },
+              ),
             ],
           ),
         ),
@@ -54,7 +61,14 @@ class Application extends StatelessWidget {
             }
             if (settings.name == AppRoute.map) {
               return MaterialPageRoute(
-                  builder: (context) => MapViewContainer());
+                builder: (context) => MapViewContainer(),
+              );
+            }
+            if (settings.name == AppRoute.webView) {
+              return MaterialPageRoute(
+                builder: (context) => const WebViewPage(
+                    'https://www.epam-group.ru/about/who-we-are/epam-russia/nizhny-novgorod'),
+              );
             }
 
             return MaterialPageRoute(builder: (context) => MainPage());
