@@ -1,4 +1,5 @@
 class AppRoute {
   static const home = '/';
-  static const card = '/card';
+  static const search = '/search';
+  static const map = '/map';
 }
