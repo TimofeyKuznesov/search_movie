@@ -3,5 +3,8 @@
     "Header": "Заголовок",
     "Search": "Поиск",
     "FIND MORE MOVIE": "Найти больше фильмов",
-    "Search movies": "Поиск фильмов"
+    "Search movies": "Поиск фильмов",
+    "map": "Google карты",
+    "web-view": "Web-view (Демо)",
+    "video": "Video Player (Демо)"
 }
