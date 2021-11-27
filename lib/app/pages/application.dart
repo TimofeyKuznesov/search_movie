@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:search_movie/app/pages/index.dart';
+import 'package:search_movie/app/services/localization/app.i18n.dart';
 import 'package:search_movie/app/theme/branding_colors.dart';
 
 class Application extends StatelessWidget {
@@ -8,20 +9,20 @@ class Application extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Moview search'),
+        title: Text('Movie search'.i18n),
       ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
+            DrawerHeader(
+              decoration: const BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text('Header'),
+              child: Text('Header'.i18n),
             ),
             ListTile(
-              title: const Text('menu1'),
+              title: Text('menu1'.i18n),
               onTap: () {
                 Navigator.pop(context);
               },
