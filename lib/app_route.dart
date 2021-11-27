@@ -3,4 +3,5 @@ class AppRoute {
   static const search = '/search';
   static const map = '/map';
   static const webView = '/web-view';
+  static const video = '/video';
 }

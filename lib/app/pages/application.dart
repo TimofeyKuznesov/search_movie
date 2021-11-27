@@ -49,6 +49,13 @@ class Application extends StatelessWidget {
                   _navigatorKey.currentState?.pushNamed(AppRoute.webView);
                 },
               ),
+              ListTile(
+                title: Text('video'.i18n),
+                onTap: () {
+                  Navigator.pop(context);
+                  _navigatorKey.currentState?.pushNamed(AppRoute.video);
+                },
+              ),
             ],
           ),
         ),
@@ -68,6 +75,11 @@ class Application extends StatelessWidget {
               return MaterialPageRoute(
                 builder: (context) => const WebViewPage(
                     'https://www.epam-group.ru/about/who-we-are/epam-russia/nizhny-novgorod'),
+              );
+            }
+            if (settings.name == AppRoute.video) {
+              return MaterialPageRoute(
+                builder: (context) => VideoPlayerPage(),
               );
             }
 
